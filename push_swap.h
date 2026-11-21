@@ -6,7 +6,7 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 16:12:46 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/21 02:53:07 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/21 03:23:30 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ int					is_valid_int(const char *str);
 int					ft_atoi(const char *nptr);
 int					parse_args(t_stack *a, int argc, char **argv);
 void				free_stack(t_stack *stack);
+int				has_duplicate(t_stack *stack, int value);
 
 #endif

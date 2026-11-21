@@ -14,8 +14,8 @@
 
 int	parse_args(t_stack *a, int argc, char **argv)
 {
-	int	i;
-	int	nbr;
+	int		i;
+	int		nbr;
 	t_node	*n_node;
 
 	i = 1;
