@@ -6,9 +6,28 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 01:12:06 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/21 02:25:07 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/21 16:49:20 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char	*s;
+	unsigned char	*dst;
+	size_t			i;
+
+	s = (unsigned char *)src;
+	dst = (unsigned char *)dest;
+	i = 0;
+	while (i < n)
+	{
+		dst[i] = s[i];
+		i++;
+	}
+	return (dest);
+}
 
 static int	get_sign(const char *str, int *i)
 {
