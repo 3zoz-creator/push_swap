@@ -27,7 +27,7 @@ void	ra(t_stack *a)
 	if (!a || a->size < 2)
 		return ;
 	rotate_top(a);
-	write(1, "ra\n", 3);	
+	write(1, "ra\n", 3);
 }
 
 void	rb(t_stack *b)
@@ -35,14 +35,14 @@ void	rb(t_stack *b)
 	if (!b || b->size < 2)
 		return ;
 	rotate_top(b);
-	write(1, "rb\n", 3);	
+	write(1, "rb\n", 3);
 }
 
 void	rr(t_stack *a, t_stack *b)
 {
 	if ((!a || a->size < 2) && (!b || b->size < 2))
 		return ;
-		if (a && a->size >= 2)
+	if (a && a->size >= 2)
 		rotate_top(a);
 	if (b && b->size >= 2)
 		rotate_top(b);

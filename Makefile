@@ -4,7 +4,8 @@ CFLAGS = -Wall -Wextra -Werror -I.
 
 
 SRCS =  main.c operations/push.c stack_add.c \
-	stack_init.c stack_remove.c	operations/swap.c
+	stack_init.c stack_remove.c operations/swap.c \
+	ft_atoi.c operations/reverse_rotate.c operations/rotate.c
 
 OBJS = $(SRCS:.c=.o)
 

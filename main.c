@@ -42,9 +42,9 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack;
 	int		i;
-	t_stack *stack_b;
+	t_stack	*stack_b;
 	t_node	*new;
-	t_node *tmp;
+	t_node	*tmp;
 
 	i = 1;
 	stack = malloc(sizeof(t_stack));
@@ -70,9 +70,8 @@ int	main(int argc, char **argv)
 		tmp = tmp->next;
 		i++;
 	}
-	printf("head : %d\n",stack->head->value);
+	printf("head : %d\n", stack->head->value);
 	printf("tail : %d\n", stack->tail->value);
-	
 	sa(stack);
 	i = 0;
 	tmp = stack->head;
@@ -82,15 +81,12 @@ int	main(int argc, char **argv)
 		tmp = tmp->next;
 		i++;
 	}
-	printf("head : %d\n",stack->head->value);
+	printf("head : %d\n", stack->head->value);
 	printf("tail : %d\n", stack->tail->value);
 	// pb(stack, stack_b);
-	
 	// printf("size of the stack = [%d]\n", stack->size);
-	
 	// printf("head : %d\n",stack->head->value);
 	// printf("tail : %d\n", stack->tail->value);
-	
 	// printf("size of the stack_b = [%d]\n", stack_b->size);
 	// printf("stack_b value = %d\n", stack_b->head->value);
 	while ((stack->head) != NULL)
