@@ -6,7 +6,7 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 02:35:49 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/21 17:46:18 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/21 19:13:55 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,22 @@ void	free_split(char **splited)
 {
 	int	i;
 
+	if (!splited)
+		return ;
 	i = 0;
 	while (splited[i] != NULL)
 	{
 		free(splited[i]);
 		i++;
 	}
+	free(splited);
 }
 
 static int	fill_argument(char **splited, t_stack *a)
 {
-	int	j;
-	int nbr;
 	t_node	*n_node;
+	int		j;
+	int		nbr;
 
 	j = 0;
 	while (splited[j] != NULL)
@@ -50,17 +53,23 @@ static int	fill_argument(char **splited, t_stack *a)
 int	parse_args(t_stack *a, int argc, char **argv)
 {
 	char	**splited;
+	int		i;
 
-	int i;
 	i = 1;
 	while (i < argc)
 	{
-
 		splited = ft_split(argv[i], ' ');
-		if (!splited)
+		if (!splited || !splited[0])
+		{
 			free_split(splited);
-		if (fill_argument(splited, a) == 0)
 			return (0);
+		}
+		if (fill_argument(splited, a) == 0)
+		{
+			free_split(splited);
+			return (0);
+		}
+		free_split(splited);
 		i++;
 	}
 	return (1);

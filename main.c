@@ -6,7 +6,7 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 03:03:15 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/21 03:13:26 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/23 19:43:01 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ int main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		return (1);
 	}
+	//print_stack(&a, 'a');
+	simple_sort(&a, &b);
+	//print_stack(&a, 'a');
 	free_stack(&a);
 	free_stack(&b);
 	return (0);

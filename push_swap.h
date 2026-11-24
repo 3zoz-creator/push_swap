@@ -6,7 +6,7 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 16:12:46 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/21 03:23:30 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/24 15:10:15 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_node
 {
 	int				value;
+	int				rank;
 	struct s_node	*next;
 }					t_node;
 
@@ -50,6 +51,14 @@ int					is_valid_int(const char *str);
 int					ft_atoi(const char *nptr);
 int					parse_args(t_stack *a, int argc, char **argv);
 void				free_stack(t_stack *stack);
-int				has_duplicate(t_stack *stack, int value);
+int					has_duplicate(t_stack *stack, int value);
+char				**ft_split(char const *s, char c);
+void				*ft_memcpy(void *dest, const void *src, size_t n);
+void				simple_sort(t_stack *a, t_stack *b);
+int					is_sorted(t_stack *a);
+void				free_stack(t_stack *stack);
+
+//remove before push
+void				print_stack(t_stack *stack, char which_stack);
 
 #endif

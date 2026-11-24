@@ -6,7 +6,7 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/21 01:12:06 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/21 16:49:20 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/21 19:21:17 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	get_sign(const char *str, int *i)
 	return (1);
 }
 
-static long	ft_atoi(const char *nptr)
+static long	get_digit(const char *nptr)
 {
 	long	res;
 	int		sign;
@@ -92,7 +92,7 @@ int	is_valid_int(const char *str)
 
 	if (!str || check_nbr(str) == 0)
 		return (0);
-	nbr = ft_atoi(str);
+	nbr = get_digit(str);
 	if (nbr > 2147483647 || nbr < -2147483648)
 		return (0);
 	return (1);
