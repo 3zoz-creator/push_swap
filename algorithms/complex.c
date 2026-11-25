@@ -6,30 +6,28 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 15:11:53 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/24 22:17:56 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/25 15:31:48 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	sort_array(int *arr, int size)
+static int	count_bits(int size)
 {
-	int	i;
-	int	j;
+	int	n;
+	int	bits;
 
-	i = 0;
-	while (i < size)
+	n = size - 1;
+	bits = 0;
+	while (n > 0)
 	{
-		j = i + 1;
-		while (j < size)
-		{
-			if ()
-		}
-		i++;
+		n = n >> 1;
+		bits++;
 	}
+	return (bits);
 }
 
-static int *copy_and_sort(t_stack *a)
+static int	*copy_and_sort(t_stack *a)
 {
 	t_node	*node;
 	int		i;
@@ -46,17 +44,25 @@ static int *copy_and_sort(t_stack *a)
 		node = node->next;
 		i++;
 	}
-	sort_array(arr, a->size);
+	ft_sort_int_tab(arr, a->size);
 	return (arr);
 }
 
 void	assign_ranks(t_stack *a)
 {
-	int *arr;
+	t_node	*node;
+	int		*arr;
 
 	if (!a || !a->head)
 		return ;
 	arr = copy_and_sort(a);
 	if (!arr)
 		return ;
+	node = a->head;
+	while (node)
+	{
+		node->rank = get_rank(node->value, arr, a->size);
+		node = node->next;
+	}
+	free(arr);
 }
