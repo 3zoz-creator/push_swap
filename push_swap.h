@@ -6,7 +6,7 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 16:12:46 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/24 22:41:39 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/25 22:29:49 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int					is_sorted(t_stack *a);
 void				free_stack(t_stack *stack);
 void				ft_sort_int_tab(int *tab, int size);
 int					get_rank(int value, int *arr, int size);
-
+void				radix_sort(t_stack *a, t_stack *b);
 // remove before push
 void				print_stack(t_stack *stack, char which_stack);
 

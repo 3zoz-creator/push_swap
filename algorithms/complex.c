@@ -48,7 +48,7 @@ static int	*copy_and_sort(t_stack *a)
 	return (arr);
 }
 
-void	assign_ranks(t_stack *a)
+static void	assign_ranks(t_stack *a)
 {
 	t_node	*node;
 	int		*arr;
@@ -65,4 +65,31 @@ void	assign_ranks(t_stack *a)
 		node = node->next;
 	}
 	free(arr);
+}
+
+void    radix_sort(t_stack *a, t_stack *b)
+{
+	int	size, (bits), (i), (j);
+
+	if (!a || !b || !a->head)
+		return ;
+	i = 0;
+	bits = count_bits(a->size);
+	assign_ranks(a);
+	while (i < bits)
+	{
+		j = 0;
+		size = a->size;
+		while (j < size)
+		{
+			if (((a->head->rank >> i) & 1) == 0)
+				pb(a, b);
+			else
+				ra(a);
+			j++;
+		}
+		while (b->head)
+			pa(a, b);
+		i++;
+	}
 }

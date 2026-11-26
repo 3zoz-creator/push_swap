@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	//print_stack(&a, 'a');
-	simple_sort(&a, &b);
+	radix_sort(&a, &b);
 	//print_stack(&a, 'a');
 	free_stack(&a);
 	free_stack(&b);
