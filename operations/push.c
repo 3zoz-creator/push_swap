@@ -6,7 +6,7 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 20:09:54 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/19 21:38:00 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/26 10:46:17 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	pb(t_stack *a, t_stack *b)
 	tmp = remove_front(a);
 	add_front(b, tmp);
 	write(1, "pb\n", 3);
+	count_op(a, OP_PB);
 }
 
 void	pa(t_stack *a, t_stack *b)
@@ -32,4 +33,5 @@ void	pa(t_stack *a, t_stack *b)
 	tmp = remove_front(b);
 	add_front(a, tmp);
 	write(1, "pa\n", 3);
+	count_op(a, OP_PA);
 }

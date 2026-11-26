@@ -6,7 +6,7 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 21:41:10 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/20 15:30:41 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/26 12:28:05 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	sa(t_stack *a)
 		return ;
 	swap_top(a);
 	write(1, "sa\n", 3);
+	count_op(a, OP_SA);
 }
 
 void	sb(t_stack *b)
@@ -37,6 +38,7 @@ void	sb(t_stack *b)
 		return ;
 	swap_top(b);
 	write(1, "sb\n", 3);
+	count_op(b, OP_SB);
 }
 
 void	ss(t_stack *a, t_stack *b)
@@ -48,4 +50,5 @@ void	ss(t_stack *a, t_stack *b)
 	if (b && b->size >= 2)
 		swap_top(b);
 	write(1, "ss\n", 3);
+	count_op(a, OP_SS);
 }

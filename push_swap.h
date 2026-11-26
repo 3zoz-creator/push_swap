@@ -6,7 +6,7 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 16:12:46 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/25 22:29:49 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/26 13:15:45 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,25 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stddef.h>
+
+# define OP_SA 0
+# define OP_SB 1
+# define OP_SS 2
+# define OP_PA 3
+# define OP_PB 4
+# define OP_RA 5
+# define OP_RB 6
+# define OP_RR 7
+# define OP_RRA 8
+# define OP_RRB 9
+# define OP_RRR 10
+
+typedef struct s_stats
+{
+	int				counts[11];
+	int				total;
+}					t_stats;
 
 typedef struct s_node
 {
@@ -27,6 +46,7 @@ typedef struct s_stack
 {
 	t_node			*head;
 	t_node			*tail;
+	t_stats			*stats;
 	int				size;
 }					t_stack;
 
@@ -45,7 +65,7 @@ void				rr(t_stack *a, t_stack *b);
 void				rra(t_stack *a);
 void				rrb(t_stack *b);
 void				rrr(t_stack *a, t_stack *b);
-void				init_stack(t_stack *stack);
+void				init_stacks(t_stack *a, t_stack *b, t_stats *stats);
 t_node				*new_node(int value);
 int					is_valid_int(const char *str);
 int					ft_atoi(const char *nptr);
@@ -60,7 +80,12 @@ void				free_stack(t_stack *stack);
 void				ft_sort_int_tab(int *tab, int size);
 int					get_rank(int value, int *arr, int size);
 void				radix_sort(t_stack *a, t_stack *b);
-// remove before push
-void				print_stack(t_stack *stack, char which_stack);
+void				count_op(t_stack *stack, int op);
+void				ft_putchar_fd(char c, int fd);
+void				ft_putchar_fd(char c, int fd);
+void				ft_putstr_fd(const char *s, int fd);
+void				ft_putnbr_fd(int n, int fd);
+void				print_bench(t_stats *stats);
+void				init_stack(t_stack *stack);
 
 #endif

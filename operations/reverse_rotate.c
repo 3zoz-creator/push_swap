@@ -6,7 +6,7 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 18:23:47 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/20 19:57:52 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/26 12:28:28 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	rra(t_stack *a)
 		return ;
 	reverse_rotate(a);
 	write(1, "rra\n", 4);
+	count_op(a, OP_RRA);
 }
 
 void	rrb(t_stack *b)
@@ -34,6 +35,7 @@ void	rrb(t_stack *b)
 		return ;
 	reverse_rotate(b);
 	write(1, "rrb\n", 4);
+	count_op(b, OP_RRB);
 }
 
 void	rrr(t_stack *a, t_stack *b)
@@ -45,4 +47,5 @@ void	rrr(t_stack *a, t_stack *b)
 	if (b && b->size >= 2)
 		reverse_rotate(b);
 	write(1, "rrr\n", 4);
+	count_op(a, OP_RRR);
 }

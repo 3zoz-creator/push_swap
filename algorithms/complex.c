@@ -6,7 +6,7 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/24 15:11:53 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/25 15:31:48 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/26 09:53:41 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,19 +67,18 @@ static void	assign_ranks(t_stack *a)
 	free(arr);
 }
 
-void    radix_sort(t_stack *a, t_stack *b)
+void	radix_sort(t_stack *a, t_stack *b)
 {
-	int	size, (bits), (i), (j);
-
-	if (!a || !b || !a->head)
+	int size, (bits), (i), (j);
+	if (!a || !b || !a->head || is_sorted(a))
 		return ;
 	i = 0;
+	size = a->size;
 	bits = count_bits(a->size);
 	assign_ranks(a);
 	while (i < bits)
 	{
 		j = 0;
-		size = a->size;
 		while (j < size)
 		{
 			if (((a->head->rank >> i) & 1) == 0)
