@@ -11,7 +11,8 @@ SRCS =  main.c operations/push.c stack_utils/stack_add.c \
 	algorithms/simple.c algorithms/complex_utils.c algorithms/complex.c \
 	operations/count_op.c benchmark/benchmark_utils/ft_putchar_fd.c \
 	benchmark/benchmark_utils/ft_putstr_fd.c \
-	benchmark/benchmark_utils/ft_putnbr_fd.c benchmark/print_bench.c
+	benchmark/benchmark_utils/ft_putnbr_fd.c benchmark/print_bench.c \
+	algorithms/disorder.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -32,3 +33,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+.SILENT:

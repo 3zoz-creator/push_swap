@@ -6,7 +6,7 @@
 /*   By: abait-br <abait-br@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/19 16:12:46 by abait-br          #+#    #+#             */
-/*   Updated: 2026/11/26 13:15:45 by abait-br         ###   ########.fr       */
+/*   Updated: 2026/11/26 20:20:23 by abait-br         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,8 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(const char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-void				print_bench(t_stats *stats);
+void				print_bench(t_stats *stats, double disorder, char *strategy);
 void				init_stack(t_stack *stack);
+double				compute_disorder(t_stack *a);
 
 #endif
